@@ -1,29 +1,20 @@
 # graphics
 
 ## Purpose
-[Describe the purpose of this SageLang library module.]
+Advanced 3D graphics rendering library, supporting Vulkan and OpenGL.
 
 ## Features
-- [Feature 1]
-- [Feature 2]
-
-## Installation
-Add as a submodule to your SageLang project:
-```bash
-git submodule add <repository-url> core/lib/graphics
-```
-
-## API Documentation
-[Link to detailed API documentation]
+- **Rendering**: Vulkan and OpenGL renderers.
+- **Scene**: Scene graph and camera management.
+- **Resources**: Mesh, Material, Texture, and PBR support.
+- **UI/Text**: Debug UI and text rendering.
 
 ## Usage Example
 ```sage
-import graphics
-# Example usage...
+import graphics.renderer
+import graphics.scene
+
+let renderer = Renderer("vulkan")
+let scene = Scene()
+renderer.render(scene)
 ```
-
-## Contributing
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for guidelines.
-
-## License
-MIT (or maintain main project license)
