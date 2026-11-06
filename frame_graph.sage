@@ -25,14 +25,14 @@ proc create_pass(name, pass_type):
     p["enabled"] = true
     return p
 
-proc pass_reads(pass, resource_name):
-    push(pass["reads"], resource_name)
+proc pass_reads(frame_pass, resource_name):
+    push(frame_pass["reads"], resource_name)
 
-proc pass_writes(pass, resource_name):
-    push(pass["writes"], resource_name)
+proc pass_writes(frame_pass, resource_name):
+    push(frame_pass["writes"], resource_name)
 
-proc pass_set_execute(pass, fn):
-    pass["execute"] = fn
+proc pass_set_execute(frame_pass, fn):
+    frame_pass["execute"] = fn
 
 # ============================================================================
 # Frame graph
@@ -44,8 +44,8 @@ proc create_frame_graph():
     fg["sorted"] = []
     return fg
 
-proc fg_add_pass(fg, pass):
-    push(fg["passes"], pass)
+proc fg_add_pass(fg, frame_pass):
+    push(fg["passes"], frame_pass)
 
 proc fg_add_resource(fg, name, resource_handle):
     fg["resources"][name] = resource_handle
